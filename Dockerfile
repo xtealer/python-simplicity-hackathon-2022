@@ -15,8 +15,11 @@ RUN pip install --no-cache-dir -r ./django_api/requirements.txt
 COPY ./api django_api
 WORKDIR /django_api
 
+RUN ./setup.sh
+RUN python3 manage.py migrate
+
 EXPOSE 8000
 
 # runs the production server
-ENTRYPOINT ["python", "django_api/manage.py"]
+ENTRYPOINT ["python", "./manage.py"]
 CMD ["runserver", "0.0.0.0:8000"]
