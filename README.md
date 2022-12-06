@@ -24,4 +24,5 @@ Remove background from image using Python API service on a Docker container. API
 ### For API Usage:
 
 Make a POST request to http://localhost:8000/upload with the Following parameters.
+(form-data)
 image=[BASE64 ENCODED IMAGE HERE]
